@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'PagesController@show'); 
+
+Route::resource('start','StartController');
+Route::get('/', 'PagesController@show');
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');

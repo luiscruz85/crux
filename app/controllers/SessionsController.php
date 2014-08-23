@@ -9,8 +9,6 @@ class SessionsController extends BaseController {
 
 	public function store()
 	{
-        // validate before attempt guy
-
 		$input = Input::all();
         $attempt = Auth::attempt(array(
             'username' => $input['username'],
