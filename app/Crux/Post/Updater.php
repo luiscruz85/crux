@@ -22,6 +22,8 @@ class Updater {
             $name = time() . '-' . $file->getClientOriginalName();
             $file = $file->move(public_path().'/uploads/', $name);
             $input['banner'] = $name;
+        } else {
+            unset($input['banner']);
         }
 		$validation = Validator::make($input, Post::$rules);
         if ($validation->fails())

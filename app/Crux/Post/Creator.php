@@ -17,6 +17,16 @@ class Creator {
     {
 		$validation = Validator::make($input, Post::$rules);
 
+        if (Input::hasFile('banner'))
+        {
+            $file = Input::file('banner');
+            $name = time() . '-' . $file->getClientOriginalName();
+            $file = $file->move(public_path().'/uploads/', $name);
+            $input['banner'] = $name;
+        } else {
+            unset($input['banner']);
+        }
+
 		if ($validation->fails())
 		{
             return Redirect::route('posts.create')->withInput()->withErrors($validation);
