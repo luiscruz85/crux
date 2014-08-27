@@ -1,5 +1,6 @@
 <?php
-HTML::macro('anger', function()
-{
-    return '<h1>fuck</h1>';
-});
+
+/*
+ * /App/macros.php
+ *
+*/
