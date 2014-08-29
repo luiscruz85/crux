@@ -1,0 +1,10 @@
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+Thumbs.db
+*.swp
+.sass-cache/
+node_modules/
+public_html/.htaccess
+app/config/database.php
