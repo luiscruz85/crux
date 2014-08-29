@@ -16,3 +16,4 @@ Boxfile.install
 Vagrantfile
 fortrabbit.yml
 provision.sh
+node_modules
