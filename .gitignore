@@ -8,3 +8,11 @@ Thumbs.db
 node_modules/
 public_html/.htaccess
 app/config/database.php
+/bootstrap/compiled.php
+.env.*.php
+.env.php
+Boxfile
+Boxfile.install
+Vagrantfile
+fortrabbit.yml
+provision.sh
