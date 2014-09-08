@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'muddworks@gmail.com', 'name' => 'Mudd Works CMS'),
+	'from' => array('address' => 'testing@gmail.com', 'name' => 'Testing'),
 
 	/*
 	|--------------------------------------------------------------------------
