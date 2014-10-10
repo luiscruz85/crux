@@ -1,6 +1,6 @@
 <?php
 
-View::composer('layouts.inc.cms-header', function($view){
+View::composer(['layouts.inc.cms-header','layouts.default','sessions.create'], function($view){
     $currentUser = Auth::user();
     $settings = Setting::asObj();
     $view->with('currentUser', $currentUser)->with('settings', $settings);

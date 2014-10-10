@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crux</title>
+    <title>{{$settings->sitename}} - Admin</title>
     {{ HTML::style(asset('css/main'.set_min().'.css')) }}
 
     {{-- Only modernizr at the top --}}

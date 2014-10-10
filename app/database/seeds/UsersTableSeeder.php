@@ -10,7 +10,7 @@ class UsersTableSeeder extends Seeder {
 		$users = array([
             'fullname'=>'Harlo Interactive Admin',
             'username'=>'harlo',
-            'password'=>Hash::make('harlo411'),
+            'password'=>Hash::make('password'),
             'email'=>'info@harlointeractive.com',
             'role'=>0
         ]);

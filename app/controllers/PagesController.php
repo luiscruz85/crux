@@ -12,7 +12,7 @@ class PagesController extends BaseController {
 	public function __construct(Page $page, Setting $settings)
 	{
         $this->page = $page;
-				$this->settings = $settings;
+		$this->settings = $settings;
 
         $this->beforeFilter('auth', array('except' => array('show', '')));
 	}
