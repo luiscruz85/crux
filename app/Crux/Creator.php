@@ -3,45 +3,45 @@
 use Validator;
 use Input;
 use Redirect;
+use Event;
 
 class Creator {
-    protected $listener;
     protected $model;
     protected $files;
     protected $input;
+    protected $after;
 
-    public function __construct($listener,$model)
+    public function __construct($model, $after = null)
     {
         $class_str      = ucwords($model);
 
-        $this->listener = $listener;
+        /***** Defaults Redirects *****/
+        $default_after  = (object)[];
+        $default_after->success =
+        $default_after->error = '/' . str_plural($model);
+
         $this->files    = ['image','file'];
         $this->model    = new $class_str;
-        $this->input    = Input::all();
-
-        unset($this->input['_token']);
+        $this->input    = array_except(Input::all(), ['_token']);
+        $this->after    = ($after ? $after : $default_after);
     }
 
     public function create()
     {
         foreach($this->files as $file)
         {
-            if(isset($this->input[$file]))
+            if(Input::hasFile($file))
             {
-                if(Input::hasFile($file))
-                {
-                    $temp_file = Input::file($file);
-                    $name = time() . '-' . $temp_file->getClientOriginalName();
-                    $temp_file = $temp_file->move(public_path() . '/uploads/',$name);
-                    $this->input[$file] = $name;
-                } else {
-                    unset($this->input[$file]);
-                }
+                $temp_file = Input::file($file);
+                $name = time() . '-' . $temp_file->getClientOriginalName();
+                $temp_file = $temp_file->move(public_path() . '/uploads/',$name);
+                $this->input[$file] = $name;
             }
         }
 
+        // Create Entry
         $this->model->create($this->input);
 
-        return true;
+        return Redirect::to($this->after->success);
     }
 }

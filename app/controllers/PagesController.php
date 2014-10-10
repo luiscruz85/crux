@@ -42,8 +42,8 @@ class PagesController extends BaseController {
 
 	public function store()
 	{
-        $creator = new Crux\Page\Creator($this);
-        return $creator->create(Input::all());
+        $creator = new Crux\Creator('page');
+        return $creator->create();
 	}
 
 	/**
