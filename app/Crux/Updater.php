@@ -4,6 +4,8 @@ use Validator;
 use Input;
 use Redirect;
 
+/* THIS FILE STILL NEEDS WORK! */
+
 class Updater {
     protected $listener;
     protected $model;
@@ -16,7 +18,7 @@ class Updater {
         $class_str      = ucwords($model);
 
         $this->listener = $listener;
-        $this->files    = ['image','file'];
+        $this->files    = ['thumbnail','image','file'];
         $this->model    = new $class_str;
         $this->input    = array_except(Input::all(),['_token','_method'];
         $this->id       = $id;

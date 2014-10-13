@@ -19,8 +19,9 @@ class Creator {
         $default_after  = (object)[];
         $default_after->success =
         $default_after->error = '/' . str_plural($model);
-
-        $this->files    = ['image','file'];
+        
+        /* Try to constrain file fields to the following, add more in fringe cases */
+        $this->files    = ['thumbnail','image','file'];
         $this->model    = new $class_str;
         $this->input    = array_except(Input::all(), ['_token']);
         $this->after    = ($after ? $after : $default_after);

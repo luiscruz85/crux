@@ -2,21 +2,29 @@
 
 class UsersTableSeeder extends Seeder {
 
+	private $table;
+	private $data;
+
+	public function __construct() {
+		$this->table = 'users';
+		$this->data = [];
+	}
+
 	public function run()
 	{
-		// Uncomment the below to wipe the table clean before populating
-		DB::table('users')->truncate();
+		DB::table($this->table)->truncate();
 
-		$users = array([
-            'fullname'=>'Harlo Interactive Admin',
-            'username'=>'harlo',
-            'password'=>Hash::make('password'),
-            'email'=>'info@harlointeractive.com',
-            'role'=>0
-        ]);
-
-		// Uncomment the below to run the seeder
-		DB::table('users')->insert($users);
+		$this->data = [
+			[
+				'fullname'=>'Harlo Interactive Admin',
+				'username'=>'harlo',
+				'password'=>Hash::make('password'),
+				'email'=>'info@harlointeractive.com',
+				'role'=>0
+			],
+		];
+		
+		DB::table($this->table)->insert($this->data);
 	}
 
 }

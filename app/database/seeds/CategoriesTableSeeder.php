@@ -1,20 +1,30 @@
-
 <?php
+
+/**
+* 	Template Table Seeder - Use this base structure when creating a new seed file
+*
+*/
 
 class CategoriesTableSeeder extends Seeder {
 
+	private $table;
+	private $data;
+
+	public function __construct() {
+		$this->table = 'categories';
+		$this->data  = [];
+	}
+
 	public function run()
 	{
-		// Uncomment the below to wipe the table clean before populating
-		DB::table('categories')->truncate();
+		DB::table($this->table)->truncate();
 
-		$categories = array(
-            ['name'=>'General'],
-            ['name'=>'Announcements']
-		);
+		$this->data = [
+			['name'=>'General'],
+			['name'=>'Announcements']
+		];
 
-		// Uncomment the below to run the seeder
-		DB::table('categories')->insert($categories);
+		DB::table($this->table)->insert($this->data);
 	}
 
 }
