@@ -1,7 +1,9 @@
 <?php
 
 /**
- * 	Template Table Seeder - Use this base structure when creating a new seed file
+ * 	Template Table Seeder
+ *
+ * 	Use this base structure when creating a new seed file
  *
  */
 
