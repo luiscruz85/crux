@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{$settings->sitename}} - Admin</title>
-    {{ HTML::style(asset('css/main'.set_min().'.css')) }}
+    {{ HTML::style(asset('css/admin'.set_min().'.css')) }}
 
     {{-- Only modernizr at the top --}}
     {{ HTML::script('js/modernizr-2.6.2.min.js') }}

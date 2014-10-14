@@ -11,17 +11,9 @@
                 <i class="text file outline orange icon"></i>
                 Pages
             </a>
-            <a class="{{ set_active('posts') }} item" href="{{ url('posts') }}">
-                <i class="rss orange icon"></i>
-                Posts
-            </a>
             <a class="{{ set_active('settings') }} item" href="{{ url('settings') }}">
                 <i class="settings orange icon"></i>
                 Settings
-            </a>
-            <a class="{{ set_active('users') }} item" href="{{ url('users') }}">
-                <i class="users orange icon"></i>
-                Users
             </a>
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
@@ -30,7 +22,7 @@
                         <a class="item" href="{{ url('users/'.$currentUser->id.'/edit') }}"> <i class="settings orange icon"></i>  Account</a>
                         <a class="item" href="{{ url('logout') }}"><i class="sign out orange icon"></i>Logout</a>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>

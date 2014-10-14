@@ -88,7 +88,7 @@ gulp.task('watch', function () {
 
 gulp.task('admin-watch', function () {
     gulp.watch('app/assets/scss/*.scss', ['admin-styles']);
-    gulp.watch('app/assets/js/*.js', ['admin-scripts']);
+    gulp.watch(['app/assets/js/*.js', 'app/assets/js/libs/admin/*.js'], ['admin-scripts']);
 });
 
 
