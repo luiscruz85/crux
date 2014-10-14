@@ -21,7 +21,7 @@
         <!-- Footer Content Here -->
     </footer>
     @endif
-    {{ HTML::script(asset('js/main'.set_min().'.js')) }}
+    {{ HTML::script(asset('js/admin'.set_min().'.js')) }}
 
     {{-- Checking if a .ckeditor element exists and then loading in the ckeditor.js file because its huge and expensive --}}
     <script type="text/javascript">
