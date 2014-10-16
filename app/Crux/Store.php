@@ -19,7 +19,7 @@ class Store {
         $default_after->success =
         $default_after->error = '/' . str_plural($model);
 
-        $this->files    = ['image','file'];
+        $this->files    = ['thumbnail','image','file'];
         $this->model    = new $class_str;
         $this->input    = array_except(Input::all(), ['_token']);
         $this->after    = ($after ? $after : $default_after);
@@ -59,7 +59,7 @@ class Store {
 
         // Modify Entry
         $this->model->find($id)->update($this->input);
-        
+
         return Redirect::to($this->after->success);
     }
 
